@@ -25,7 +25,7 @@
                         <li v-for="category in categories" :key="category">
                             <label :for="'category-' + category">
                                 <input v-model="todoCategories" type="checkbox" :id="'category-" + category
-                                :calue=category form=form-todo /> {{ category }}
+                                :value=category form=form-todo /> {{ category }}
                             </label>                          
                         </li>
                     </ul>
@@ -45,7 +45,7 @@
                     <label for="todo-search-category">カテゴリでフィルタ</label>
                     <select v-model="selectedCategory" id="todo-search-category">
                         <option value="">指定なし</option>
-                        <option v-for="category in categories" :key="category" :calue="category">{{ category }}</option>
+                        <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
                     </select>
                 </div>
                 <div class="todo-search-item">
@@ -68,7 +68,7 @@
                         <input v-model="todo.done" type="checkbox" />
                     </div>
                     <div class="todo-item-content">
-                        <div class="todo-item-date">{{new Date(todo.dateTime).toString()}}</div>
+                        <div class="todo-item-date">{{ new Date(todo.dateTime).toString() }}</div>
                         <h3 class="todo-item-title">{{ todo.title }}</h3>
                         <div v-if="todo.description" class="todo-item-description">
                             {{ todo.description}}
